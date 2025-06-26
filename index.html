@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MacOS - Simulator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="turn-on">
+        <div class="on-screen">
+          <div class="logo">
+            <img src="/assets/power.png" alt="" />
+          </div>
+          <h3>Power On Your Mac</h3>
+        </div>
+      </div>
+      <div class="boot-screen">
+        <div class="loader">
+          <div class="logo">
+            <img src="/assets/apple-boot.png" alt="" />
+          </div>
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+
+          <audio id="boot-sound" src="/assets/startup.wav"></audio>
+        </div>
+      </div>
+      <div class="desktop">
+        <div class="menu-bar">
+          <div class="left">
+            <div class="menu-0">
+              <img src="/assets/apple-logo.png" alt="" />
+            </div>
+            <div class="menu menu-1">
+              <h5>Finder</h5>
+            </div>
+            <div class="menu menu-2">
+              <h5>File</h5>
+            </div>
+            <div class="menu menu-3">
+              <h5>Edit</h5>
+            </div>
+            <div class="menu menu-4">
+              <h5>View</h5>
+            </div>
+            <div class="menu menu-5">
+              <h5>Go</h5>
+            </div>
+            <div class="menu menu-6">
+              <h5>Window</h5>
+            </div>
+            <div class="menu menu-7">
+              <h5>Help</h5>
+            </div>
+          </div>
+          <div class="right">
+            <div class="battery">
+              <h6>10%</h6>
+              <img src="/assets/low-battery.png" alt="" />
+            </div>
+            <div class="wifi r-menu">
+              <img src="/assets/wifi.png" alt="" />
+            </div>
+            <div class="search r-menu">
+              <img src="/assets/search.png" alt="" />
+            </div>
+            <div class="controls r-menu">
+              <img src="/assets/switch.png" alt="" />
+            </div>
+            <div class="date">
+              <h5>Wed 25 Jun 4:53 PM</h5>
+            </div>
+
+            <div class="control-center">
+              <div class="first control-menu">
+                <div class="left">
+                  <div class="wifi-menus">
+                    <div class="icon fst">
+                      <img src="/assets/wifi.png" alt="wifi" />
+                    </div>
+                    <div class="text txt">
+                      <h5>Wi-Fi</h5>
+                      <h6>Airtel_IND</h6>
+                    </div>
+                  </div>
+                  <div class="wifi-menus">
+                    <div class="icon">
+                      <img src="/assets/bluetooth.png" alt="wifi" />
+                    </div>
+                    <div class="text">
+                      <h5>Bluetooth</h5>
+                      <h6>Off</h6>
+                    </div>
+                  </div>
+                  <div class="wifi-menus">
+                    <div class="icon">
+                      <img src="/assets/airdrop2.png" alt="wifi" />
+                    </div>
+                    <div class="text txt">
+                      <h5>AirDrop</h5>
+                      <h6>Off</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="top">
+                    <div class="wifi-menus">
+                      <div class="icon">
+                        <img src="/assets/moon.png" alt="wifi" />
+                      </div>
+                      <h5>Focus</h5>
+                    </div>
+                  </div>
+                  <div class="bottom">
+                    <div class="left">
+                      <div class="icon">
+                        <img src="/assets/screen.png" alt="" />
+                      </div>
+                      <h5>
+                        State <br />
+                        Manager
+                      </h5>
+                    </div>
+                    <div class="right">
+                      <div class="icon">
+                        <img src="/assets/cast.png" alt="" />
+                      </div>
+                      <h5>
+                        Screen <br />
+                        Mirroring
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="second control-menu">
+                <h5>Display</h5>
+                <input type="range" min="0" max="100" class="slider" />
+              </div>
+              <div class="third control-menu">
+                <h5>Sound</h5>
+                <input type="range" min="0" max="100" class="slider" />
+              </div>
+              <div class="fourth control-menu">
+                <div class="music">
+                  <div class="left">
+                    <div class="logo">
+                      <img src="/assets/music.png" alt="" />
+                    </div>
+                    <div class="text">
+                      <h5>Music.app</h5>
+                    </div>
+                  </div>
+                  <div class="right">
+                    <div class="btns">
+                      <img src="/assets/play.png" alt="" />
+                    </div>
+                    <div class="btns btn2">
+                      <img src="/assets/fast-forward.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="taskbar">
+          <div class="icon finder" id="0">
+            <img src="/assets/finder.png" alt="" />
+            <div class="dot"></div>
+          </div>
+          <div class="icon safari" id="1">
+            <img src="/assets/safari.png" alt="" />
+            <div class="dot"></div>
+          </div>
+          <div class="icon settings" id="2">
+            <img src="/assets/settings.png" alt="" />
+            <div class="dot"></div>
+          </div>
+          <div class="icon notes" id="3">
+            <img src="/assets/notes.png" alt="" />
+            <div class="dot"></div>
+          </div>
+          <div class="icon appstore" id="4">
+            <img src="/assets/appstore.png" alt="" />
+            <div class="dot"></div>
+          </div>
+          <div class="icon terminal" id="5">
+            <img src="/assets/terminal.png" alt="" />
+            <div class="dot"></div>
+          </div>
+          <div class="line"></div>
+          <div class="icon bin" id="6">
+            <img src="/assets/bin.png" alt="" />
+            <div class="dot"></div>
+          </div>
+        </div>
+        <div class="windows">
+          <div class="window finder-window" id="0">
+            <div class="title-bar"></div>
+            <div class="buttons">
+              <div class="close"></div>
+              <div class="minimize"></div>
+              <div class="maximize"></div>
+            </div>
+            <div class="left"></div>
+            <div class="right">Finder Window</div>
+          </div>
+          <div class="window safari" id="1">
+            <div class="title-bar"></div>
+            <div class="buttons">
+              <div class="close"></div>
+              <div class="minimize"></div>
+              <div class="maximize"></div>
+            </div>
+            <div class="left"></div>
+            <div class="right">Safari Window</div>
+          </div>
+          <div class="window setting-window" id="2">
+            <div class="title-bar"></div>
+            <div class="buttons">
+              <div class="close"></div>
+              <div class="minimize"></div>
+              <div class="maximize"></div>
+            </div>
+            <div class="left"></div>
+            <div class="right">Settings Window</div>
+          </div>
+          <div class="window notes-window" id="3">
+            <div class="title-bar"></div>
+            <div class="buttons">
+              <div class="close"></div>
+              <div class="minimize"></div>
+              <div class="maximize"></div>
+            </div>
+            <div class="left"></div>
+            <div class="right">Notes Window</div>
+          </div>
+          <div class="window appstore-window" id="4">
+            <div class="title-bar"></div>
+            <div class="buttons">
+              <div class="close"></div>
+              <div class="minimize"></div>
+              <div class="maximize"></div>
+            </div>
+            <div class="left"></div>
+            <div class="right">AppStore Window</div>
+          </div>
+          <div class="window terminal" id="5">
+            <div class="title-bar"></div>
+            <div class="buttons">
+              <div class="close"></div>
+              <div class="minimize"></div>
+              <div class="maximize"></div>
+            </div>
+            <div class="left"></div>
+            <div class="right">Terminal Window</div>
+          </div>
+          <div class="window recycle-window" id="6">
+            <div class="title-bar"></div>
+            <div class="buttons">
+              <div class="close"></div>
+              <div class="minimize"></div>
+              <div class="maximize"></div>
+            </div>
+            <div class="left"></div>
+            <div class="right">Recycle Window</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

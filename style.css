@@ -1,0 +1,638 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+main .turn-on {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .turn-on .on-screen {
+  padding: 1rem;
+  width: 15%;
+}
+main .turn-on .on-screen .logo {
+  margin: auto;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+}
+main .turn-on .on-screen .logo img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .turn-on .on-screen h3 {
+  margin-top: 1rem;
+  color: white;
+  text-align: center;
+}
+main .boot-screen {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .boot-screen .loader {
+  padding: 1rem;
+  width: 15%;
+}
+main .boot-screen .loader .logo {
+  margin: auto;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+}
+main .boot-screen .loader .logo img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .boot-screen .loader .progress-bar {
+  margin-top: 3rem;
+  width: 100%;
+  height: 0.3rem;
+  border-radius: 0.3rem;
+  background-color: rgba(128, 128, 128, 0.684);
+  overflow: hidden;
+}
+main .boot-screen .loader .progress-bar .progress {
+  height: 100%;
+  width: 10%;
+  background-color: white;
+}
+main .desktop {
+  height: 100%;
+  width: 100%;
+  background-image: url(/assets/Desktop-Wallpaper.png);
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+main .desktop .menu-bar {
+  width: 100%;
+  -webkit-backdrop-filter: blur(3rem);
+          backdrop-filter: blur(3rem);
+  color: white;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .desktop .menu-bar .left {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+main .desktop .menu-bar .left .menu {
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  cursor: default;
+}
+main .desktop .menu-bar .left .menu h5 {
+  font-weight: 500;
+}
+main .desktop .menu-bar .left .menu-1 h5 {
+  font-weight: 700;
+}
+main .desktop .menu-bar .left .menu-0 {
+  height: 1.2rem;
+  width: 2rem;
+}
+main .desktop .menu-bar .left .menu-0 img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main .desktop .menu-bar .left .menu:active {
+  background-color: rgba(128, 128, 128, 0.802);
+}
+main .desktop .menu-bar .left .menu-0 {
+  border-radius: 0.3rem;
+}
+main .desktop .menu-bar .left .menu-0:active {
+  background-color: rgba(128, 128, 128, 0.802);
+}
+main .desktop .menu-bar .right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+main .desktop .menu-bar .right .battery {
+  height: 0.9rem;
+  width: 3.5rem;
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+main .desktop .menu-bar .right .battery h6 {
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+main .desktop .menu-bar .right .battery img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .desktop .menu-bar .right .r-menu {
+  height: 1rem;
+  width: 2rem;
+  cursor: default;
+  border-radius: 0.3rem;
+  padding: 0 0.5rem;
+}
+main .desktop .menu-bar .right .r-menu img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .desktop .menu-bar .right .date h5 {
+  font-weight: 400;
+}
+main .desktop .menu-bar .right .r-menu:active {
+  background-color: rgba(128, 128, 128, 0.802);
+}
+main .desktop .menu-bar .right .date {
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  cursor: default;
+}
+main .desktop .menu-bar .right .date:active {
+  background-color: rgba(128, 128, 128, 0.802);
+}
+main .desktop .menu-bar .right .control-center {
+  height: 350px;
+  width: 280px;
+  background-color: rgba(41, 41, 41, 0.949);
+  border: 0.04rem solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 0.8rem;
+  -webkit-backdrop-filter: blur(3rem);
+          backdrop-filter: blur(3rem);
+  position: absolute;
+  bottom: -22.7rem;
+  z-index: 999 !important;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.7rem;
+  transition: all ease 0.2s;
+  opacity: 0;
+}
+main .desktop .menu-bar .right .control-center .control-menu {
+  width: 100%;
+  border-radius: 1rem;
+  border: 0.04rem solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 0.8rem;
+  -webkit-backdrop-filter: blur(3rem);
+          backdrop-filter: blur(3rem);
+}
+main .desktop .menu-bar .right .control-center .first {
+  height: 30%;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  border: none;
+}
+main .desktop .menu-bar .right .control-center .first .left {
+  height: 100%;
+  width: 45%;
+  border: 0.04rem solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+main .desktop .menu-bar .right .control-center .first .left .wifi-menus {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .desktop .menu-bar .right .control-center .first .left .wifi-menus .icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0.2rem;
+  border-radius: 50%;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .desktop .menu-bar .right .control-center .first .left .wifi-menus .icon img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .desktop .menu-bar .right .control-center .first .left .wifi-menus .icon:active {
+  background-color: rgb(19, 126, 220);
+}
+main .desktop .menu-bar .right .control-center .first .left .wifi-menus .fst {
+  background-color: rgb(19, 126, 220);
+}
+main .desktop .menu-bar .right .control-center .first .left .wifi-menus .text h5 {
+  font-size: 0.7rem;
+}
+main .desktop .menu-bar .right .control-center .first .left .wifi-menus .text h6 {
+  font-weight: 200;
+  font-size: 0.5rem;
+}
+main .desktop .menu-bar .right .control-center .first .left .wifi-menus .txt {
+  width: 58%;
+}
+main .desktop .menu-bar .right .control-center .first .right {
+  height: 100%;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+}
+main .desktop .menu-bar .right .control-center .first .right .top {
+  height: 50%;
+  width: 100%;
+  border: 0.04rem solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 0.8rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+main .desktop .menu-bar .right .control-center .first .right .top .wifi-menus {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  gap: 0.5rem;
+}
+main .desktop .menu-bar .right .control-center .first .right .top .wifi-menus .icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0.3rem;
+  border-radius: 50%;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .desktop .menu-bar .right .control-center .first .right .top .wifi-menus .icon img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .desktop .menu-bar .right .control-center .first .right .top .wifi-menus .icon:active {
+  background-color: rgb(19, 126, 220);
+}
+main .desktop .menu-bar .right .control-center .first .right .top .wifi-menus h5 {
+  font-weight: 500;
+}
+main .desktop .menu-bar .right .control-center .first .right .bottom {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+main .desktop .menu-bar .right .control-center .first .right .bottom .left {
+  height: 100%;
+  width: 50%;
+  border: 0.04rem solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .desktop .menu-bar .right .control-center .first .right .bottom .left h5 {
+  margin-top: -5px;
+  font-size: 0.5rem;
+  text-align: center;
+}
+main .desktop .menu-bar .right .control-center .first .right .bottom .left .icon {
+  height: 1.4rem;
+  width: 1.4rem;
+  padding: 0.3rem;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .desktop .menu-bar .right .control-center .first .right .bottom .left .icon img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .desktop .menu-bar .right .control-center .first .right .bottom .right {
+  height: 100%;
+  width: 50%;
+  border: 0.04rem solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .desktop .menu-bar .right .control-center .first .right .bottom .right h5 {
+  margin-top: -8px;
+  font-size: 0.5rem;
+  text-align: center;
+}
+main .desktop .menu-bar .right .control-center .first .right .bottom .right .icon {
+  height: 1.4rem;
+  width: 1.4rem;
+  padding: 0.3rem;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .desktop .menu-bar .right .control-center .first .right .bottom .right .icon img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .desktop .menu-bar .right .control-center .second,
+main .desktop .menu-bar .right .control-center .third,
+main .desktop .menu-bar .right .control-center .fourth {
+  height: 20%;
+}
+main .desktop .menu-bar .right .control-center .third,
+main .desktop .menu-bar .right .control-center .second {
+  padding: 0.5rem;
+}
+main .desktop .menu-bar .right .control-center .third h5,
+main .desktop .menu-bar .right .control-center .second h5 {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+main .desktop .menu-bar .right .control-center .third .slider,
+main .desktop .menu-bar .right .control-center .second .slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  height: 1.2rem;
+  border-radius: 0.7rem;
+  background: linear-gradient(to right, white 50%, gray 50%);
+  outline: none;
+  transition: all 450ms ease-in;
+  border: none;
+  cursor: pointer;
+  margin-top: -4px;
+}
+main .desktop .menu-bar .right .control-center .third .slider::-webkit-slider-runnable-track,
+main .desktop .menu-bar .right .control-center .second .slider::-webkit-slider-runnable-track {
+  height: 1.2rem;
+  border-radius: 0.7rem;
+  background: transparent;
+}
+main .desktop .menu-bar .right .control-center .third .slider::-webkit-slider-thumb,
+main .desktop .menu-bar .right .control-center .second .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid gray;
+}
+main .desktop .menu-bar .right .control-center .fourth {
+  overflow: hidden;
+}
+main .desktop .menu-bar .right .control-center .fourth .music {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .desktop .menu-bar .right .control-center .fourth .music .left {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+main .desktop .menu-bar .right .control-center .fourth .music .left .logo {
+  height: 80%;
+  width: 3rem;
+  border-radius: 0.3rem;
+}
+main .desktop .menu-bar .right .control-center .fourth .music .left .logo img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .desktop .menu-bar .right .control-center .fourth .music .left .text {
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+main .desktop .menu-bar .right .control-center .fourth .music .right {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+main .desktop .menu-bar .right .control-center .fourth .music .right .btns {
+  height: 25px;
+  width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .desktop .menu-bar .right .control-center .fourth .music .right .btns img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .desktop .menu-bar .right .control-center .fourth .music .right .btn2 {
+  padding: 0.3rem;
+}
+main .desktop .taskbar {
+  padding: 0.2rem 0.1rem 0.5rem 0.1rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 60;
+  bottom: 0.3rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  border: 0.04rem solid rgba(255, 255, 255, 0.438);
+}
+main .desktop .taskbar .line {
+  background-color: rgba(255, 255, 255, 0.601);
+  width: 0.04rem;
+  height: 3rem;
+  margin: 0 0.2rem;
+}
+main .desktop .taskbar .icon {
+  height: 3.8rem;
+  width: 3.8rem;
+  border-radius: 0.5rem;
+  position: relative;
+  transition: transform ease 0.3s;
+}
+main .desktop .taskbar .icon .dot {
+  height: 0.3rem;
+  width: 0.3rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.606);
+  position: absolute;
+  bottom: -0.3rem;
+  left: 50%;
+  transform: translate(-50%);
+  display: none;
+}
+main .desktop .taskbar .icon img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .desktop .taskbar .icon:hover {
+  transform: scale(1.3);
+}
+main .desktop .windows {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+main .desktop .windows .window {
+  height: 80%;
+  width: 50%;
+  background-color: rgba(41, 41, 41, 0.801);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+  transition: opacity 0.1s ease;
+  transition: all 0.2s ease;
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
+  position: absolute;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+main .desktop .windows .window .title-bar {
+  height: 45px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 7;
+}
+main .desktop .windows .window .buttons {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+main .desktop .windows .window .buttons .close,
+main .desktop .windows .window .buttons .minimize,
+main .desktop .windows .window .buttons .maximize {
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+}
+main .desktop .windows .window .buttons .close {
+  background-color: #fe5f57;
+}
+main .desktop .windows .window .buttons .minimize {
+  background-color: #febc30;
+}
+main .desktop .windows .window .buttons .maximize {
+  background-color: #28c840;
+}
+main .desktop .windows .window .left {
+  height: 100%;
+  width: 25%;
+  border-right: 1.2px solid black;
+  position: relative;
+}
+main .desktop .windows .window .right {
+  height: 100%;
+  width: 75%;
+  background-color: rgba(41, 41, 41, 0.924);
+  color: white;
+}
+main .desktop .windows .window.no-transition {
+  transition: none !important;
+}
+@keyframes minimizeToIcon {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+}
+main .desktop .windows .window.minimizing {
+  transition: all 0.4s ease-in-out;
+  transform-origin: top left;
+  opacity: 0;
+  transform: scale(0.2);
+  pointer-events: none;
+}
