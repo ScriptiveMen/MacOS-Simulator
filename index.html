@@ -200,24 +200,75 @@
         </div>
         <div class="windows">
           <div class="window finder-window" id="0">
-            <div class="title-bar"></div>
+            <div class="title-bar">
+              <div class="heading">
+                <h5>Documents - Local</h5>
+                <img src="/assets/search.png" alt="" />
+              </div>
+            </div>
             <div class="buttons">
               <div class="close"></div>
               <div class="minimize"></div>
               <div class="maximize"></div>
             </div>
-            <div class="left"></div>
-            <div class="right">Finder Window</div>
+            <div class="left">
+              <div class="panel">
+                <div class="option1">
+                  <p>Favourites</p>
+                  <h6>AirDrop</h6>
+                  <h6>Recents</h6>
+                  <h6>Applications</h6>
+                  <h6>Documents</h6>
+                  <h6>Desktop</h6>
+                  <h6>Downloads</h6>
+                </div>
+                <div class="option2">
+                  <p>iCloud</p>
+                  <h6>iCloud Drive</h6>
+                  <h6>Shared</h6>
+                </div>
+                <div class="option3">
+                  <p>Tags</p>
+                  <h6>Red</h6>
+                  <h6>Orange</h6>
+                  <h6>Yellow</h6>
+                  <h6>Green</h6>
+                  <h6>Blue</h6>
+                </div>
+              </div>
+            </div>
+            <div class="right"></div>
           </div>
-          <div class="window safari" id="1">
-            <div class="title-bar"></div>
+          <div class="window safari-window" id="1">
+            <div class="title-bar">
+              <input type="text" placeholder="Search or enter a website name" />
+            </div>
             <div class="buttons">
               <div class="close"></div>
               <div class="minimize"></div>
               <div class="maximize"></div>
             </div>
-            <div class="left"></div>
-            <div class="right">Safari Window</div>
+            <div class="left">
+              <div class="head1">
+                <p>Favourites</p>
+                <div class="fav fav1">
+                  <img src="/assets/apple_s.png" alt="" />
+                </div>
+                <div class="fav fav2">
+                  <img src="/assets/google_s.png" alt="" />
+                </div>
+                <div class="fav fav3">
+                  <img src="/assets/yahoo2_s.png" alt="" />
+                </div>
+                <div class="fav fav4">
+                  <img src="/assets/fb_s.png" alt="" />
+                </div>
+                <div class="fav fav5">
+                  <img src="/assets/wp_S.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="right"></div>
           </div>
           <div class="window setting-window" id="2">
             <div class="title-bar"></div>
@@ -268,6 +319,49 @@
             </div>
             <div class="left"></div>
             <div class="right">Recycle Window</div>
+          </div>
+
+          <div class="context-menu">
+            <h5>New Folder</h5>
+            <hr />
+            <h5>Get Info</h5>
+            <h5>Change Wallpaper...</h5>
+            <h5>Edit Widgets...</h5>
+            <hr />
+            <h5>Use Stacks</h5>
+            <h5>Sort By</h5>
+            <h5>Show View Options</h5>
+          </div>
+          <div class="search-box">
+            <img src="/assets/search.png" alt="" />
+            <input type="text" placeholder="Spotlight Search" />
+          </div>
+          <div class="shutdown">
+            <h5>Shut Down...</h5>
+          </div>
+          <div class="shutting-down">
+            <div class="left">
+              <div class="round">
+                <img src="/assets/power_off.png" alt="" />
+              </div>
+            </div>
+            <div class="right">
+              <h5>Are you sure you want to shut down your computer now?</h5>
+              <p>
+                If you do nothing, the computer will shut down automatically in
+                <span class="counter">52</span> seconds.
+              </p>
+              <div class="check">
+                <input type="checkbox" id="checknow" />
+                <label for="checknow"
+                  >Reopen windows when logging back in</label
+                >
+              </div>
+              <div class="btns">
+                <button class="cancel">Cancel</button>
+                <button class="shutnow">Shut Down</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

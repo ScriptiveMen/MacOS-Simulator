@@ -1,3 +1,7 @@
+:root {
+  --blue: #157dda;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,6 +32,7 @@ main .turn-on {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
 }
 main .turn-on .on-screen {
   padding: 1rem;
@@ -60,6 +65,7 @@ main .boot-screen {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
 }
 main .boot-screen .loader {
   padding: 1rem;
@@ -426,6 +432,10 @@ main .desktop .menu-bar .right .control-center .second .slider {
   border: none;
   cursor: pointer;
   margin-top: -4px;
+  pointer-events: auto;
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+          user-select: auto;
 }
 main .desktop .menu-bar .right .control-center .third .slider::-webkit-slider-runnable-track,
 main .desktop .menu-bar .right .control-center .second .slider::-webkit-slider-runnable-track {
@@ -550,6 +560,7 @@ main .desktop .windows {
   height: 100%;
   width: 100%;
   position: relative;
+  pointer-events: none;
 }
 main .desktop .windows .window {
   height: 80%;
@@ -570,12 +581,24 @@ main .desktop .windows .window {
   visibility: hidden;
 }
 main .desktop .windows .window .title-bar {
-  height: 45px;
+  height: 50px;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 7;
+  border-bottom: 1px solid black;
+}
+main .desktop .windows .window .title-bar .heading {
+  height: 100%;
+  width: 75%;
+  background-color: rgb(67, 66, 66);
+  margin-left: auto;
+  color: white;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 main .desktop .windows .window .buttons {
   padding: 1rem;
@@ -610,11 +633,119 @@ main .desktop .windows .window .left {
   border-right: 1.2px solid black;
   position: relative;
 }
+main .desktop .windows .window .left .panel {
+  margin-top: 50px;
+  height: 90%;
+  width: 100%;
+  overflow: scroll;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+}
 main .desktop .windows .window .right {
   height: 100%;
   width: 75%;
   background-color: rgba(41, 41, 41, 0.924);
   color: white;
+  margin-top: 100px;
+}
+main .desktop .windows .finder-window {
+  height: 60%;
+}
+main .desktop .windows .finder-window .title-bar .heading h5 {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+main .desktop .windows .finder-window .title-bar .heading img {
+  height: 20px;
+  width: 1/1;
+}
+main .desktop .windows .finder-window .left .panel h6 {
+  padding: 0.3rem 1rem;
+  border-radius: 3px;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+main .desktop .windows .finder-window .left .panel p {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: gray;
+  padding: 0.4rem 0;
+  margin-bottom: 2px;
+}
+main .desktop .windows .finder-window .left .panel h6:hover {
+  background-color: gray;
+}
+main .desktop .windows .safari-window .title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .desktop .windows .safari-window .title-bar input {
+  width: 60%;
+  background-color: transparent;
+  border: none;
+  outline: 2px solid var(--blue);
+  border-radius: 0.3rem;
+  padding: 0.2rem 0.3rem;
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+          user-select: auto;
+  pointer-events: all;
+  color: white;
+}
+main .desktop .windows .safari-window .left {
+  border-right: none;
+  width: 100%;
+  padding: 100px 120px;
+}
+main .desktop .windows .safari-window .left .head1 {
+  height: 23%;
+  width: 70%;
+  position: relative;
+  display: flex;
+  align-items: end;
+  gap: 1rem;
+}
+main .desktop .windows .safari-window .left .head1 p {
+  position: absolute;
+  top: 0;
+  left: 1;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+main .desktop .windows .safari-window .left .head1 .fav {
+  height: 70px;
+  width: 70px;
+  border-radius: 9px;
+  padding: 0.5rem;
+}
+main .desktop .windows .safari-window .left .head1 .fav img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .desktop .windows .safari-window .left .head1 .fav1 {
+  background-color: rgb(95, 95, 95);
+}
+main .desktop .windows .safari-window .left .head1 .fav2 {
+  background-color: white;
+}
+main .desktop .windows .safari-window .left .head1 .fav3 {
+  background-color: #6001d1;
+}
+main .desktop .windows .safari-window .left .head1 .fav4 {
+  background-color: #1876d2;
+}
+main .desktop .windows .safari-window .left .head1 .fav5 {
+  background-color: #28a71b;
+}
+main .desktop .windows .safari-window .right {
+  width: 0;
 }
 main .desktop .windows .window.no-transition {
   transition: none !important;
@@ -635,4 +766,164 @@ main .desktop .windows .window.minimizing {
   opacity: 0;
   transform: scale(0.2);
   pointer-events: none;
+}
+main .desktop .windows .context-menu {
+  width: 190px;
+  background-color: rgba(41, 41, 41, 0.801);
+  border: 0.04rem solid rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
+  border-radius: 0.4rem;
+  padding: 0.3rem 0.7rem;
+  color: white;
+  position: absolute;
+  display: none;
+  z-index: 99;
+  pointer-events: auto;
+}
+main .desktop .windows .context-menu h5 {
+  font-weight: 400;
+  padding: 0.2rem;
+  margin: 0.2rem 0;
+  border-radius: 0.2rem;
+}
+main .desktop .windows .context-menu h5:hover {
+  background-color: #137edc;
+}
+main .desktop .windows .context-menu hr {
+  margin: 4px 0;
+  border: 0.04rem solid rgba(255, 255, 255, 0.2);
+  height: 1px;
+}
+main .desktop .windows .search-box {
+  height: 6.8%;
+  width: 40%;
+  border-radius: 0.9rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  border: 0.04rem solid rgba(255, 255, 255, 0.367);
+  background-color: rgb(41, 41, 41);
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  display: none;
+}
+main .desktop .windows .search-box img {
+  height: 1.7rem;
+  width: 1/1;
+}
+main .desktop .windows .search-box input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  outline: none;
+  caret-color: #137edc;
+}
+main .desktop .windows .shutdown {
+  padding: 0.4rem 0.5rem;
+  width: 130px;
+  color: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  border: 0.04rem solid rgba(255, 255, 255, 0.367);
+  background-color: rgb(41, 41, 41);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0.5rem;
+  display: none;
+}
+main .desktop .windows .shutdown h5 {
+  font-weight: 400;
+}
+main .desktop .windows .shutting-down {
+  height: 180px;
+  width: 450px;
+  color: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  border: 0.04rem solid rgba(255, 255, 255, 0.367);
+  background-color: rgb(41, 41, 41);
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0.9rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  gap: 0.4rem;
+}
+main .desktop .windows .shutting-down .left {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+main .desktop .windows .shutting-down .left .round {
+  margin-top: 1rem;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: gray;
+  padding: 1rem;
+}
+main .desktop .windows .shutting-down .left .round img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .desktop .windows .shutting-down .right {
+  height: 100%;
+  width: 80%;
+  padding-top: 0.5rem;
+}
+main .desktop .windows .shutting-down .right p {
+  font-size: 0.7rem;
+  padding: 0.6rem 0;
+}
+main .desktop .windows .shutting-down .right .check {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+main .desktop .windows .shutting-down .right .check label {
+  font-size: 0.7rem;
+}
+main .desktop .windows .shutting-down .right .btns {
+  margin-top: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+main .desktop .windows .shutting-down .right .btns button {
+  width: 85px;
+  border-radius: 4px;
+  padding: 0.1rem;
+  color: white;
+  border: none;
+  font-weight: 500;
+}
+main .desktop .windows .shutting-down .right .btns .cancel {
+  background-color: gray;
+}
+main .desktop .windows .shutting-down .right .btns .shutnow {
+  background-color: #137edc;
+}
+main .desktop .windows .shutting-down.show {
+  visibility: visible;
+  opacity: 1;
 }

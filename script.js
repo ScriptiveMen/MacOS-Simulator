@@ -32,7 +32,6 @@ function startSystem() {
     });
   });
 }
-startSystem();
 
 function controlPanelHiding() {
   let controlPanel = document.querySelector(".control-center");
@@ -58,7 +57,6 @@ function controlPanelHiding() {
     }
   });
 }
-controlPanelHiding();
 
 function dateTime() {
   let date = document.querySelector(".date h5");
@@ -96,7 +94,6 @@ function dateTime() {
 
   setInterval(() => updateTime(), 60000);
 }
-dateTime();
 
 function draggableFeature() {
   const windows = document.querySelectorAll(".window");
@@ -143,7 +140,6 @@ function draggableFeature() {
     });
   });
 }
-draggableFeature();
 
 function closingFeature() {
   let icons = document.querySelectorAll(".taskbar .icon");
@@ -182,7 +178,6 @@ function closingFeature() {
     });
   });
 }
-closingFeature();
 
 function minimizeFeature() {
   let windows = document.querySelectorAll(".window");
@@ -213,7 +208,6 @@ function minimizeFeature() {
     });
   });
 }
-minimizeFeature();
 
 function maximizeFeature() {
   let windows = document.querySelectorAll(".window");
@@ -251,7 +245,6 @@ function maximizeFeature() {
     });
   });
 }
-maximizeFeature();
 
 function doubleClickFeature() {
   let windows = document.querySelectorAll(".window");
@@ -283,4 +276,92 @@ function doubleClickFeature() {
     });
   });
 }
+
+function contextmenuFeature() {
+  let desktop = document.querySelector(".desktop");
+  let menu = document.querySelector(".context-menu");
+
+  desktop.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+
+    menu.style.top = `${e.clientY - 50}px`;
+    menu.style.left = `${e.clientX - 10}px`;
+    menu.style.display = "block";
+  });
+
+  desktop.addEventListener("click", function (e) {
+    e.preventDefault();
+    menu.style.display = "none";
+  });
+}
+function spotlightFeature() {
+  let searchBtn = document.querySelector(".search");
+  let search = document.querySelector(".search-box");
+  let isOpen = false;
+  searchBtn.addEventListener("click", function () {
+    if (!isOpen) {
+      search.style.display = "flex";
+      isOpen = true;
+    } else {
+      search.style.display = "none";
+      isOpen = false;
+    }
+  });
+}
+function shutdownFeature() {
+  let logo = document.querySelector(".menu-0");
+  let shutdown = document.querySelector(".shutdown");
+  let isShut = false;
+  logo.addEventListener("click", function () {
+    if (!isShut) {
+      shutdown.style.display = "block";
+      isShut = true;
+    } else {
+      shutdown.style.display = "none";
+      isShut = false;
+    }
+  });
+}
+
+function shutdownConfirmBox() {
+  let counter = document.querySelector(".counter");
+  let shutdownBtn = document.querySelector(".shutdown");
+  let confirmBox = document.querySelector(".shutting-down");
+  let shutNow = document.querySelector(".shutnow");
+  let cancel = document.querySelector(".cancel");
+  let count = 52;
+  let isConfirm = false;
+  let interval = null;
+
+  shutdownBtn.addEventListener("click", function (e) {
+    confirmBox.classList.toggle("show");
+    interval = setInterval(() => {
+      if (count <= 0) {
+        clearInterval(interval);
+        window.location.reload();
+      }
+      counter.innerHTML = `${count--}`;
+    }, 1000);
+  });
+  shutNow.addEventListener("click", function () {
+    window.location.reload();
+  });
+  cancel.addEventListener("click", function () {
+    clearInterval(interval);
+    confirmBox.classList.remove("show");
+    isConfirm = false;
+  });
+}
+
+startSystem();
+controlPanelHiding();
+dateTime();
+draggableFeature();
+closingFeature();
+minimizeFeature();
+maximizeFeature();
 doubleClickFeature();
+contextmenuFeature();
+spotlightFeature();
+shutdownFeature();
+shutdownConfirmBox();
