@@ -32,7 +32,6 @@ main .turn-on {
   display: flex;
   align-items: center;
   justify-content: center;
-  display: none;
 }
 main .turn-on .on-screen {
   padding: 1rem;
@@ -65,7 +64,6 @@ main .boot-screen {
   display: flex;
   align-items: center;
   justify-content: center;
-  display: none;
 }
 main .boot-screen .loader {
   padding: 1rem;
