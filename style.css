@@ -32,6 +32,7 @@ main .turn-on {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
 }
 main .turn-on .on-screen {
   padding: 1rem;
@@ -64,6 +65,7 @@ main .boot-screen {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
 }
 main .boot-screen .loader {
   padding: 1rem;
@@ -811,6 +813,7 @@ main .desktop .windows .search-box {
   padding: 0.5rem;
   gap: 0.5rem;
   display: none;
+  pointer-events: auto;
 }
 main .desktop .windows .search-box img {
   height: 1.7rem;
@@ -838,6 +841,7 @@ main .desktop .windows .shutdown {
   left: 0;
   border-radius: 0.5rem;
   display: none;
+  pointer-events: auto;
 }
 main .desktop .windows .shutdown h5 {
   font-weight: 400;
@@ -862,6 +866,7 @@ main .desktop .windows .shutting-down {
   opacity: 0;
   transition: all 0.3s ease;
   gap: 0.4rem;
+  pointer-events: auto;
 }
 main .desktop .windows .shutting-down .left {
   height: 100%;
@@ -917,11 +922,13 @@ main .desktop .windows .shutting-down .right .btns button {
 }
 main .desktop .windows .shutting-down .right .btns .cancel {
   background-color: gray;
+  pointer-events: auto;
 }
 main .desktop .windows .shutting-down .right .btns .shutnow {
   background-color: #137edc;
+  pointer-events: auto;
 }
 main .desktop .windows .shutting-down.show {
-  visibility: visible;
   opacity: 1;
+  visibility: visible;
 }
